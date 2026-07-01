@@ -15,6 +15,16 @@ transform: scale(0.9);
   background: var(--text-main);
   color: var(--bg-dark);
 }
+a.btn-primary {
+  background: var(--text-main);
+  color: var(--bg-dark);
+  transition: opacity 0.2s ease;
+}
+a.btn-primary:hover {
+ opacity: 0.8;
+ background: var(--text-main);
+  color: var(--bg-dark);
+}
 .btn-secondary {
   background: #18181c;
   color: var(--text-main);
