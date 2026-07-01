@@ -14,7 +14,7 @@ const projectsData = await getAllProjects();
     return;
   }
 
-const workshops = await workshopCard(projectsData);
+const workshops = await projectCard(projectsData);
 
 container.append(workshops);
 }
