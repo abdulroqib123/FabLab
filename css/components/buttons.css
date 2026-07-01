@@ -1,0 +1,51 @@
+button:active {
+transform: scale(0.9);
+}
+
+.btn-primary,
+.btn-secondary {
+  color: #fff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+.btn-primary {
+  background: var(--text-main);
+  color: var(--bg-dark);
+}
+.btn-secondary {
+  background: #18181c;
+  color: var(--text-main);
+  border: 1px solid #2e2e38;
+}
+
+.btn-circle {
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary) 0%,
+    var(--accent-primary) 100%
+  ) bottom /100% 100% no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.btn-circle:hover {
+     background: linear-gradient(
+    90deg,
+    var(--accent-secondary) 0%,
+    var(--accent-primary) 100%
+  ) right / 100% 0 no-repeat;
+}
+.btn-circle svg {
+  color: #fff;
+}

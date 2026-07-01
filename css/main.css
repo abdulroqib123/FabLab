@@ -1,0 +1,185 @@
+.hero-actions-container {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 100%;
+  max-width: 155px;
+  padding: 8px 4px;
+  background: var(--bg-card);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+/* --- HERO SECTION --- */
+.hero {
+  padding: 4rem 2rem 6rem 2rem;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-img-container {
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.hero-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.slogan {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slogan span:nth-child(1) {
+  color: var(--text-main);
+}
+.slogan span:nth-child(2) {
+  color: var(--accent-primary);
+}
+.slogan span:nth-child(3) {
+  color: var(--text-main);
+}
+.slogan span:nth-child(4) {
+  color: var(--text-muted);
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin: 2rem 0;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* --- HOMEPAGE MOBILE SPECIFICS --- */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .slogan {
+    font-size: 3.2rem;
+  }
+}
+
+.section {
+  margin: 8px 0;
+  padding: 24px 16px;
+  background: #070709;
+}
+.section h3 {
+    margin: 24px 0 0;
+}
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-header {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.section-header p {
+  color: var(--text-muted);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.open-day-dates {
+    display: flex;
+    flex-direction: column;
+}
+
+.open-lab-day {
+padding: 16px;
+margin-bottom: 16px;
+}
+
+.location-direction {
+  padding: 16px;
+  display: flex;
+}
+h3 {
+  margin-top: 8px;
+}
+.muted-text {
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* --- Focus List Styling --- */
+.focus-list {
+  list-style: none; /* Removes generic default bullets */
+  padding: 0;
+  margin: 24px 0 24px 8px;
+
+}
+
+.focus-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Custom Neon Dot/Bullet replacement */
+.focus-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.25rem;
+  top: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* --- Source Credits Footer Styling --- */
+.source-credits {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #2f3b4c; /* Subtle separation line inside the card */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.source-credits p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8f9aa6; /* De-emphasized secondary text */
+}
