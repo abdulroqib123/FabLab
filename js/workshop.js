@@ -4,7 +4,7 @@ const params = new URLSearchParams(window.location.search);
 const workshopId = params.get("ws");
 
 async function initWorkshop() {
-    if (!projectId) return (window.location.href = "workshops.html");
+    if (!workshopId) return (window.location.href = "workshops.html");
 
     const workshopName = document.getElementById("workshopName");
     const workshopContent = document.getElementById("workshopContent");
