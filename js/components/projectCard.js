@@ -36,7 +36,7 @@ export function projectCard(projects) {
 
     const cardLink = document.createElement("a");
     cardLink.classList.add("card-link", "btn-primary");
-    cardLink.href = `/project/${pj.id}`;
+    cardLink.href = `/projekt.html?pj=${pj.id}`;
     cardLink.textContent = "Mehr Erfahren";
     cardBottom.appendChild(cardLink);
 

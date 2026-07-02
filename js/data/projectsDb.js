@@ -8,6 +8,18 @@ export async function getAllProjects() {
   return projects;
 }
 
+export async function getProjectById(projectId) {
+  let { data: project, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("id", projectId)
+    .single();
+
+  if (error) return console.log(error);
+
+  return project;
+}
+
 export async function getprojectsByCount(limit) {
   let { data: projects, error } = await supabase
   .from("projects")

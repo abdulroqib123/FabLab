@@ -8,6 +8,18 @@ export async function getAllworkshops() {
   return workshops;
 }
 
+export async function getWorkshopById(workshopId) {
+  let { data: workshop, error } = await supabase
+    .from("workshops")
+    .select("*")
+    .eq("id", workshopId)
+    .single();
+
+  if (error) return console.log(error);
+
+  return workshop;
+}
+
 export async function getworkshopsByCount(limit) {
   let { data: workshops, error } = await supabase
   .from("workshops")
