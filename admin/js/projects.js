@@ -162,7 +162,7 @@ async function handleQuillImageUpload() {
 async function loadExistingWorkshopData(id) {
   const { data: pj, error } = await supabase
     .from("projects")
-    .select("*")
+    .select("*, author: posted_by(full_name)")
     .eq("id", id)
     .single();
 
@@ -190,7 +190,7 @@ async function loadExistingWorkshopData(id) {
 
   quill.clipboard.dangerouslyPasteHTML(pj.content || "");
   document.getElementById("audit-badge").textContent =
-    `Zuletzt aktualisiert von: ${currentAdminName}`;
+    `Zuletzt aktualisiert von: ${pj.author.full_name}`;
 }
 
 async function handleFormSubmit(e) {

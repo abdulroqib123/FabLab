@@ -162,13 +162,13 @@ async function handleQuillImageUpload() {
 async function loadExistingWorkshopData(id) {
   const { data: ws, error } = await supabase
     .from("workshops")
-    .select("*")
+    .select("*, author: posted_by(full_name)")
     .eq("id", id)
     .single();
 
   if (error || !ws) {
     alert("Fehler beim Laden des Workshops.");
-    window.location.href = "dashboard.html";
+    window.location.href = "workshops.html";
     return;
   }
 
@@ -192,7 +192,7 @@ async function loadExistingWorkshopData(id) {
   // Hydrate Quill rich text content
   quill.clipboard.dangerouslyPasteHTML(ws.content || "");
   document.getElementById("audit-badge").textContent =
-    `Zuletzt aktualisiert von: ${currentAdminName}`;
+    `Zuletzt aktualisiert von: ${ws.author.full_name}`;
 }
 
 async function handleFormSubmit(e) {
