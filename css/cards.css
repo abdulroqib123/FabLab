@@ -8,7 +8,7 @@
   transition: border-color 0.2s ease;
 }
 .card:hover {
-  border-color: #3f3f4e;
+  border-color: var(--text-muted);
 }
 .card:hover .card-img {
   transform: scale(1.1);
