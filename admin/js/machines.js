@@ -205,6 +205,7 @@ async function handleFormSubmit(e) {
     description,
     image_urls: images,
     content,
+    updated_at: new Date().toISOString(),
     posted_by: authorId,
   };
 
@@ -220,6 +221,7 @@ async function handleFormSubmit(e) {
   }
 
   if (error) {
+    console.error(error)
     alert(`Fehler beim Speichern: ${error.message}`);
   } else {
     alert("Maschine erfolgreich gespeichert!");
