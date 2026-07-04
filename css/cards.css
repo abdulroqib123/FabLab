@@ -55,6 +55,13 @@
 
 }
 
+article img {
+    width: 100%;
+  max-width: 600px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
 .img-container {
   margin-top: 24px;
     width: 100%;

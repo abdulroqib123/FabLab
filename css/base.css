@@ -231,6 +231,9 @@ a:hover {
   color: var(--accent-primary);
 
 }
+p {
+  margin-top: 8px ;
+}
 img {
   border-radius: 8px;
 }
