@@ -37,7 +37,7 @@ export function machineCard(machines) {
     const cardLink = document.createElement("a");
     cardLink.classList.add("card-link", "btn-primary");
     cardLink.href = `/maschine.html?mc=${mc.id}`;
-    cardLink.textContent = "Mehr Erfahren";
+    cardLink.textContent = "Maschine Ansehen";
     cardBottom.appendChild(cardLink);
 
     fragment.appendChild(card);

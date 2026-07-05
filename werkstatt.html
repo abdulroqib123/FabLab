@@ -161,7 +161,20 @@
           <h2>Die Werkstatt</h2>
         </header>
 
-        <article class="card section"></article>
+        <article class="card section">
+          <p>Unser FabLab ist mit vielen Werkzeugen ausgestattet.</p>
+
+          <section class="tools-container">
+            <a href="maschine.html?mc=26be8ed3-4baa-476a-a8cc-aa8253635f3a" class="tool-card">
+              <h3>3D Drucker</h3>
+              <p class="card-desc">Im Fablab Bremen stehen ingesamt sechs 3D Drucker zur Verfügung (Stand November 2024)</p>
+            </a>
+            <a href="maschine.html?mc=368fe440-586e-4393-b4e2-f9cea306f8a1" class="tool-card">
+              <h3>Laser Cutter Zing 6030</h3>
+              <p class="card-desc">Unser Lasercutter des Herstellers Zing hat eine maximale Arbeitsfläche von 60 cm x 30 cm.</p>
+            </a>
+          </section>
+        </article>
       </div>
     </section>
 
@@ -287,6 +300,40 @@
         </div>
       </div>
     </footer>
+<script type="module">
+  import {getAllMachines} from "./js/data/machinesDb.js";
+
+ async function initWerkstatt() {
+   
+   const machines = await getAllMachines();
+   const toolsContainer = document.querySelector(".tools-container");
+   if(!toolsContainer) return;
+    toolsContainer.innerHTML = "";
+    
+  if (!machines || machines.length === 0) {
+    container.innerHTML = `<p class="muted-text">Es gibt noch keine projekte.</p>`;
+    return;
+  }
+  
+if(machines) {
+    machines.forEach((m) => {
+      const toolCard = document.createElement("a")
+      toolCard.classList.add("tool-card");
+toolCard.href = `maschine.html?mc=${m.id}`
+
+toolCard.innerHTML = `  
+              <h3>${m.name}</h3>
+              <p class="card-desc">${m.description}</p>
+            `
+
+            toolsContainer.append(toolCard);
+    });
+  }
+}
+
+await initWerkstatt();
+</script>
+
     <script src="js/app.js" type="module" defer></script>
     <script src="js/components/nav.js" type="module" defer></script>
   </body>
