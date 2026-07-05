@@ -28,15 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
   <a href="projekte.html">Projekte</a>
 
   <!-- 4. MINTsteps (Dropdown - 1 Item) -->
+  <a href="workshops.html">Workshops</a>
+  
+  
+  <!-- 5. Workshops (Single Link) -->
   <div class="dropdown">
     <a href="mint-steps.html" class="dropdown-trigger">MINTsteps</a>
     <div class="sub-menu">
       <a href="mintsteps-projekte.html">MINTsteps Projekte</a>
     </div>
   </div>
-
-  <!-- 5. Workshops (Single Link) -->
-  <a href="workshops.html">Workshops</a>
 
   <!-- 6. Die Werkstatt (Dropdown - Reorganized) -->
   <div class="dropdown">
