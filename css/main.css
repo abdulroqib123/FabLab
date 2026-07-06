@@ -62,7 +62,7 @@ body {
 }
 
 .hero-img-container {
-  height: 300px;
+  height: 250px;
   width: 100%;
   position: relative;
 }
@@ -76,9 +76,9 @@ body {
 
 
 .slogan {
-  font-size: 4.5rem;
+  font-size: clamp(3.2rem, 12vw, 4.5rem);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -2px;
   display: flex;
   flex-direction: column;
@@ -91,10 +91,10 @@ body {
   color: var(--accent-primary);
 }
 .slogan span:nth-child(3) {
-  color: var(--text-main);
+  color: var(--text-muted);
 }
 .slogan span:nth-child(4) {
-  color: var(--text-muted);
+  color: var(--accent-tertiary);
 }
 
 .hero-text {
@@ -106,18 +106,17 @@ body {
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 /* --- HOMEPAGE MOBILE SPECIFICS --- */
 @media (max-width: 900px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 32px;
   }
-  .slogan {
-    font-size: 3.2rem;
-  }
+
 }
 
 .section {
