@@ -220,3 +220,86 @@ h3 {
   font-size: 0.85rem;
   color: var(--text-muted); /* De-emphasized secondary text */
 }
+
+
+
+/*SEARCH*/
+/* Search Overlay Background */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10vh;
+}
+
+/* Main Container */
+.search-container {
+  width: 90%;
+  max-width: 600px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Header & Input */
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-input {
+  color: var(--text-main);
+  background: var(--bg-main);
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  outline: none;
+}
+.search-input:focus {
+  border-color: var(--text-muted);
+}
+
+/* Results List */
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+.search-result-item {
+  padding: 12px;
+  border-bottom: 1px solid var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.search-result-item:hover {
+  background-color: var(--bg-main);
+}
+
+/* Badges */
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.badge.machine { background: #0285c752; color: #05acff; }
+.badge.project { background: #3d096b52; color: #9010ff; }
+.badge.workshop { background: #03963752; color: #00ff62; }

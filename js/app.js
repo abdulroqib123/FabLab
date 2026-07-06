@@ -1,4 +1,5 @@
 import { initGlobalArchiveSystem } from "./archive.js";
+import { initSearch } from "./search.js";
 
 function initTheme() {
   const themeToggleBtn = document.getElementById("theme-toggle");
@@ -19,5 +20,7 @@ themeToggleBtn.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", async () => {
 
   initTheme();
+  initSearch();
+  
  await initGlobalArchiveSystem();
 })
