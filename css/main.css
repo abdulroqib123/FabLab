@@ -45,7 +45,7 @@ body {
 }
 /* --- HERO SECTION --- */
 .hero {
-  padding: 4rem 2rem 6rem 2rem;
+  padding: 24px 24px 6rem;
   min-height: 85vh;
   display: flex;
   align-items: center;
@@ -74,8 +74,13 @@ body {
   object-position: center;
 }
 
+.logo-img {
+  width: auto;
+  max-width: 100%;
+}
 
 .slogan {
+  margin-top: 32px;
   font-size: clamp(3.2rem, 12vw, 4.5rem);
   font-weight: 900;
   line-height: 1;
