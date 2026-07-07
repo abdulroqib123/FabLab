@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 /* --- CSS VARIABLES & RESET --- */
 :root {
   --bg-dark: #0a0a0c;
@@ -5,8 +7,14 @@
   --bg-header: #0a0a0cd9;
 
   --bg-card: #121216;
-  --border-color: #1f1f24;
-  --border-card: #1f1f26;
+  
+   /* INPUTS */
+  --input-bg: #1c1c1c;
+  --input-color: #ffffff;
+
+    /* BORDERS */
+  --border-primary: #2c2f36;
+  --border-secondary: #3a3d45;
 
   /* Brand Accents */
   --accent-primary: #da4453;
@@ -21,16 +29,34 @@
   --status-warn: #ff3d00;
 
   --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* RADIUS */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 28px;
+
+    /* SPACING */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
 }
 
 body.light {
-  --bg-dark: #f8f9fa;                     /* Soft, clean base background */
-  --bg-main: #ffffff;                     /* Crisp white for content areas */
-  --bg-header: #f8f9fad9; /* Clean glass-effect header */
+  --bg-dark: #e8e8e8;                     /* Soft, clean base background */
+  --bg-main: #f5f5dc;                     /* Crisp white for content areas */
+  --bg-header: #e8e8e8d9; /* Clean glass-effect header */
 
-  --bg-card: #f1f3f5;                     /* Light gray card surface for clear separation */
-  --border-color: #e2e8f0;                /* Subtle, modern divider line */
-  --border-card: #cbd5e1;                 /* Slightly deeper border to define cards */
+  --bg-card: #f1f3f5;      
+  
+  /* INPUTS */
+  --input-bg: #f2f2f2;
+  --input-color: #000000;
+
+    /* BORDERS */
+  --border-primary: #2c2f36;
+  --border-secondary: #3a3d45;              /* Slightly deeper border to define cards */
 
   /* High-contrast typography */
   --text-main: #0f172a;                   /* Deep off-black for excellent readability */
@@ -69,33 +95,40 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-primary);
 }
 
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 var(--space-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo-area {
-  font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: -0.5px;
   text-decoration: none;
 }
 
-.logo-fab { color: var(--accent-tertiary); }
-.logo-lab { color: var(--text-muted); }
+.logo-fab { 
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  color: var(--accent-tertiary); 
+}
+.logo-lab { 
+    font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--text-muted); 
+}
 .logo-sub {
   font-size: 0.75rem;
   font-weight: 400;
   color: var(--text-muted);
   display: block;
-  margin-top: -4px;
+  margin-top: -var(--space-sm);
 }
 
 /* --- REUSABLE DROPDOWN MECHANICS --- */
@@ -123,11 +156,11 @@ body {
   transform: translateX(-50%);
   background: var(--bg-card);
   border: 1px solid var(--border-card);
-  border-radius: 8px;
+  border-radius: var(--space-sm);
   min-width: 200px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 var(--space-sm) var(--space-lg) rgba(0, 0, 0, 0.5);
   z-index: 100;
-  padding: 8px 0;
+  padding: var(--space-sm) 0;
   margin-top: 0;
 }
 
@@ -140,7 +173,7 @@ body {
 
 .sub-menu a {
   display: block;
-  padding: 10px 16px;
+  padding: var(--space-sm) var(--space-md);
   font-size: 0.9rem;
   color: var(--text-muted);
   white-space: nowrap;
@@ -167,7 +200,7 @@ body {
 
 /* --- BUTTON LAYERS --- */
 .btn-nav {
-  padding: 0.5rem 1rem;
+  padding: var(--space-sm) var(--space-md);
   border-radius: 6px;
   font-size: 0.9rem !important;
 }
@@ -190,11 +223,11 @@ body {
     background: var(--bg-dark);
     align-items: flex-start;
     flex-direction: column;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-primary);
     transition: height 0.4s ease, padding 0.4s ease;
   }
   .nav-menu.active { 
-    padding: 2rem;
+    padding: var(--space-lg);
     height: 450px;
     overflow: auto;
     max-height: fit-content;
@@ -221,7 +254,7 @@ body {
     box-shadow: none; 
     background: transparent;
     border: none;
-    margin-top: 4px;
+    margin-top: var(--space-xs);
   }
   .dropdown:hover .sub-menu { 
     display: block; 
@@ -237,10 +270,10 @@ a:hover {
 
 }
 p {
-  margin-top: 8px ;
+  margin-top: var(--space-sm) ;
 }
 img {
-  border-radius: 8px;
+  border-radius: var(--space-sm);
 }
 
 .footer {
@@ -254,10 +287,10 @@ img {
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
-margin: 8px 16px;
+margin: var(--space-sm) var(--space-md);
 }
 
 .footer-links {
   display: flex;
-  gap: 8px;
+  gap: var(--space-sm);
 }
