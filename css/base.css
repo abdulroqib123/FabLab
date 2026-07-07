@@ -243,11 +243,18 @@ img {
   border-radius: 8px;
 }
 
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 .footer-inner {
+    width: 100%;
+
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
-margin: 24px 16px;
+margin: 8px 16px;
 }
 
 .footer-links {
