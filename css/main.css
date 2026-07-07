@@ -19,13 +19,13 @@ body {
 @keyframes slide-out {
     to{
               opacity: 0;
-        translate: -100vw;
+        transform: translate(-100vw);
     }
 }
 @keyframes slide-in {
     from{
               opacity: 0;
-        translate: 100vw;
+        transform: translate(100vw);
     }
 }
 
