@@ -27,9 +27,10 @@
 }
 
 input {
+    outline: none;
     padding: 16px 8px;
     border-radius: 8px;
-    border: 1px solid var(border-primary);
+    border: 1px solid var(--border-primary);
     background: var(--input-bg);
     color: var(--text-main);
 }
