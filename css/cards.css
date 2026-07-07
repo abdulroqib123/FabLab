@@ -24,7 +24,7 @@
   transition: transform 0.2s ease;
 }
 .card-bottom {
-  padding: var(--space-md);
+  padding: 0 var(--space-md) var(--space-md);
 }
 .card h3 {
   font-size: 1.35rem;
