@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FabLab Bremen - Dokument hochladen</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/inputs.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+<style>
+    /* --- DOCUMENTS ADMIN PANEL --- */
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.document-card {
+  padding: var(--space-md);
+  background: var(--bg-main);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.document-card:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-secondary);
+  transform: translateY(-3px);
+}
+
+.document-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  word-break: break-word;
+}
+
+.document-card .document-meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.document-card-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.document-card-actions .btn-delete {
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.document-card-actions .btn-delete:hover {
+  background: var(--accent-primary);
+  color: #fff;
+}
+</style>
+</head>
+<body>
+
+    <nav class="admin-nav">
+        <div class="nav-brand">
+            <a href="dashboard.html" class="back-link">← Zurück zum Dashboard</a>
+        </div>
+        <div class="nav-user-zone"><span id="admin-name">Admin</span></div>
+    </nav>
+
+    <main class="dashboard-container">
+        <header class="form-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+            <div>
+                <h1>Dokument hochladen</h1>
+                <p class="subtitle">Lade Dateien hoch und erhalte einen Link, den du in Beiträgen verwenden oder direkt teilen kannst.</p>
+            </div>
+            <button type="button" id="uploadDocument" class="action-arrow" style="margin: 0; padding: 10px 16px; background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: 6px; text-decoration: none;">
+                ＋ Neues Dokument
+            </button>
+        </header>
+
+        <!-- Hidden file input, triggered by the button above -->
+        <input
+            type="file"
+            id="document-file-input"
+            accept=".pdf,.txt,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.webp"
+            style="display: none;"
+        >
+
+        <p id="upload-status" class="text-muted" style="display:none; margin-bottom: 16px;"></p>
+
+        <section id="documents-list-container">
+            <div style="padding: 24px; color: var(--text-muted);">Lade Dokumente...</div>
+        </section>
+    </main>
+
+    <script type="module" src="js/documents.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
