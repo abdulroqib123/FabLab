@@ -45,9 +45,9 @@
 }
 
 body.light {
-  --bg-dark: #e8e8e8; /* Soft, clean base background */
-  --bg-main: #f5f5dc; /* Crisp white for content areas */
-  --bg-header: #e8e8e8d9; /* Clean glass-effect header */
+  --bg-dark: #e8e8e8;      /* Soft, clean base background */
+  --bg-main: #fafaf9;      /* Off-white for content areas */
+  --bg-header: #e8e8e8d9;  /* Clean glass-effect header */
 
   --bg-card: #f1f3f5;
 
@@ -56,12 +56,12 @@ body.light {
   --input-color: #000000;
 
   /* BORDERS */
-  --border-primary: #2c2f36;
-  --border-secondary: #3a3d45; /* Slightly deeper border to define cards */
+  --border-primary: #d1d5db;   /* Light neutral border */
+  --border-secondary: #dde1e6; /* Slightly softer border for card definition */
 
   /* High-contrast typography */
-  --text-main: #0f172a; /* Deep off-black for excellent readability */
-  --text-muted: #677383; /* Distinct slate-gray for secondary text */
+  --text-main: #0f172a;
+  --text-muted: #677383;
 }
 
 * {
