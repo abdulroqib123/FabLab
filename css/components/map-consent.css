@@ -1,0 +1,41 @@
+.map-consent {
+  width: 100%;
+  min-height: 300px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  border: 1px dashed var(--border-primary);
+}
+
+.map-consent-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  max-width: 320px;
+}
+
+.map-consent-btn:hover {
+  opacity: 0.9;
+}
+
+.map-consent-icon {
+  font-size: 1.5rem;
+}
+
+.map-consent-note {
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.85;
+}

@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="css/cards.css" />
     <link rel="stylesheet" href="css/components/buttons.css" />
     <link rel="stylesheet" href="css/components/inputs.css" />
+<link rel="stylesheet" href="css/components/map-consent.css" />
 
-        <!-- Supabase Storage (images) -->
-<link rel="preconnect" href="https://kpcprtpmhzpguwwnocnu.supabase.co" crossorigin>
-<link rel="dns-prefetch" href="https://kpcprtpmhzpguwwnocnu.supabase.co">
+    <!-- Supabase Storage (images) -->
+    <link
+      rel="preconnect"
+      href="https://kpcprtpmhzpguwwnocnu.supabase.co"
+      crossorigin
+    />
+    <link rel="dns-prefetch" href="https://kpcprtpmhzpguwwnocnu.supabase.co" />
 
-<!-- Supabase API -->
-<link rel="preconnect" href="https://api.supabase.com" crossorigin>
-<link rel="dns-prefetch" href="https://api.supabase.com">
+    <!-- Supabase API -->
+    <link rel="preconnect" href="https://api.supabase.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.supabase.com" />
 
-<!-- Supabase JS client -->
-<link rel="preconnect" href="https://supabase.com" crossorigin>
-<link rel="dns-prefetch" href="https://supabase.com">
-
+    <!-- Supabase JS client -->
+    <link rel="preconnect" href="https://supabase.com" crossorigin />
+    <link rel="dns-prefetch" href="https://supabase.com" />
   </head>
   <body>
     <header class="main-header">
@@ -91,9 +95,14 @@
         class="hero-img"
       />
 
-       <div class="hero-actions-container">
+      <div class="hero-actions-container">
         <!-- Search -->
-        <button id="searchBtn" type="button" aria-label="Search for a workshop, project or machine" class="btn-primary btn-circle">
+        <button
+          id="searchBtn"
+          type="button"
+          aria-label="Search for a workshop, project or machine"
+          class="btn-primary btn-circle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -111,7 +120,12 @@
         </button>
 
         <!-- Notifications -->
-        <button type="button" id="subscribeBtn" aria-label="Subscribe to FabLab Newsletter" class="btn-primary btn-circle">
+        <button
+          type="button"
+          id="subscribeBtn"
+          aria-label="Subscribe to FabLab Newsletter"
+          class="btn-primary btn-circle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -129,7 +143,12 @@
         </button>
 
         <!-- Theme toggle -->
-        <button type="button" aria-label="Toggle between light and dark mode" id="theme-toggle" class="btn-primary btn-circle">
+        <button
+          type="button"
+          aria-label="Toggle between light and dark mode"
+          id="theme-toggle"
+          class="btn-primary btn-circle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -321,15 +340,19 @@
             vorhanden)
           </p>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2396.616496491023!2d8.813599876715353!3d53.081162172213595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1280deead11c1%3A0x9bf86da267170104!2sFabLab%20Bremen%20e.%20V.!5e0!3m2!1sen!2sde!4v1782829696807!5m2!1sen!2sde"
-            width="100%"
-            height="450"
-            style="border: 0; border-radius: 8px"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-          ></iframe>
+          <div
+            class="map-consent"
+            data-map-embed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2396.616496491023!2d8.813599876715353!3d53.081162172213595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1280deead11c1%3A0x9bf86da267170104!2sFabLab%20Bremen%20e.%20V.!5e0!3m2!1sen!2sde!4v1782829696807!5m2!1sen!2sde"
+          >
+            <button type="button" class="map-consent-btn">
+              <span class="map-consent-icon">📍</span>
+              Karte laden
+              <span class="map-consent-note"
+                >Beim Laden wird eine Verbindung zu Google-Servern
+                hergestellt.</span
+              >
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -339,11 +362,12 @@
         <p>&copy; All rights reserved | FabLab</p>
 
         <div class="footer-links">
-         <a href="datenschutzerklärung.html">Datenschutzerklärung</a>
+          <a href="datenschutzerklärung.html">Datenschutzerklärung</a>
           <a href="impressum.html">Impressum</a>
         </div>
       </div>
     </footer>
+        <script src="js/components/map-consent.js" type="module" defer></script>
     <script src="js/app.js" type="module" defer></script>
     <script type="module" src="js/maschinen.js"></script>
     <script src="js/components/nav.js" type="module" defer></script>

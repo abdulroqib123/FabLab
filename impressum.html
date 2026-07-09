@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="css/cards.css" />
     <link rel="stylesheet" href="css/components/buttons.css" />
     <link rel="stylesheet" href="css/components/inputs.css" />
-
-
+    <link rel="stylesheet" href="css/components/map-consent.css" />
   </head>
   <body>
     <header class="main-header">
@@ -23,16 +22,10 @@
         <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
 
         <nav id="navMenu" class="nav-menu">
-          <!--1. Home (Single Link)-->
           <a href="index">Start</a>
-
-          <!-- 2. Die Idee (Single Link) -->
           <a href="idee">Die Idee</a>
-
-          <!-- 3. Projekte (Single Link) -->
           <a href="projekte">Projekte</a>
 
-          <!-- 4. MINTsteps (Dropdown - 1 Item) -->
           <div class="dropdown">
             <a href="mint-steps" class="dropdown-trigger">MINTsteps</a>
             <div class="sub-menu">
@@ -40,24 +33,18 @@
             </div>
           </div>
 
-          <!-- 5. Workshops (Single Link) -->
           <a href="workshops">Workshops</a>
 
-          <!-- 6. Die Werkstatt (Dropdown - Reorganized) -->
           <div class="dropdown">
             <a href="werkstatt" class="dropdown-trigger">Die Werkstatt</a>
             <div class="sub-menu">
-              <!-- High-level workshop sections -->
               <a href="maschinen">Alle Maschinen & Werkzeuge</a>
-
-              <!-- Spatial Zones grouped logically together -->
               <hr class="dropdown-divider" />
               <a href="elektronik-ecke">Elektrotechnik Ecke</a>
               <a href="werkbänke">Werkbänke & Handwerk</a>
             </div>
           </div>
 
-          <!-- 7. Mitglied werden (Dropdown - 1 Item) -->
           <div class="dropdown">
             <a href="mitglied-werden" class="dropdown-trigger btn-nav"
               >Mitglied werden</a
@@ -67,7 +54,6 @@
             </div>
           </div>
 
-          <!-- 8. Spenden (Single Link Button) -->
           <a href="spenden" class="btn-nav btn-alt">Spenden</a>
         </nav>
       </div>
@@ -80,9 +66,13 @@
         class="hero-img"
       />
 
-       <div class="hero-actions-container">
-         <!-- Search -->
-        <button id="searchBtn" type="button" aria-label="Search for a workshop, project or machine" class="btn-primary btn-circle">
+      <div class="hero-actions-container">
+        <button
+          id="searchBtn"
+          type="button"
+          aria-label="Search for a workshop, project or machine"
+          class="btn-primary btn-circle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -99,8 +89,12 @@
           </svg>
         </button>
 
-        <!-- Notifications -->
-        <button type="button" id="subscribeBtn" aria-label="Subscribe to FabLab Newsletter" class="btn-primary btn-circle">
+        <button
+          type="button"
+          id="subscribeBtn"
+          aria-label="Subscribe to FabLab Newsletter"
+          class="btn-primary btn-circle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -117,8 +111,12 @@
           </svg>
         </button>
 
-        <!-- Theme toggle -->
-        <button type="button" aria-label="Toggle between light and dark mode" id="theme-toggle" class="btn-primary btn-circle">
+        <button
+          type="button"
+          aria-label="Toggle between light and dark mode"
+          id="theme-toggle"
+          class="btn-primary btn-circle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -151,7 +149,122 @@
         </header>
 
         <article class="card section">
-         
+          <h3>Angaben gemäß § 5 DDG (vormals TMG)</h3>
+          <p>
+            FabLab Bremen e. V.<br />
+            An der Weide 50a<br />
+            28195 Bremen
+          </p>
+
+          <h3>Kontakt</h3>
+          <p>
+            E-Mail: <a href="mailto:info@fablab-bremen.org">info@fablab-bremen.org</a><br />
+            Telefon: <a href="tel:+4942140893624">0421/40893624</a> (Anrufbeantworter) |
+            <a href="tel:+4942169679370">0421/69679370</a>
+          </p>
+
+          <h3>Registereintrag</h3>
+          <p>
+            Registergericht: Bremen<br />
+            Vereinsregisternummer: VR 7732 HB
+          </p>
+
+          <h3>Vertretungsberechtigter Vorstand gemäß § 26 BGB</h3>
+          <p>
+            Geschäftsführender Vorstand:<br />
+            Antje Moebus und Wolfgang Günther
+          </p>
+
+          <h3>Bankverbindung</h3>
+          <p>
+            Deutsche Skatbank<br />
+            BIC: GENODEF1SLR<br />
+            IBAN: DE46 8306 5408 0004 8207 97
+          </p>
+
+          <h3>Disclaimer</h3>
+
+          <h4>1. Haftungsbeschränkung</h4>
+          <p>
+            Die Inhalte des Internetauftritts wurden mit größtmöglicher
+            Sorgfalt und nach bestem Gewissen erstellt. Dennoch übernimmt der
+            Anbieter dieser Webseite keine Gewähr für die Aktualität,
+            Vollständigkeit und Richtigkeit der bereitgestellten Seiten und
+            Inhalte.
+          </p>
+          <p>
+            Als Diensteanbieter ist der Anbieter dieser Webseite gemäß § 7
+            Abs. 1 TMG für eigene Inhalte und bereitgestellte Informationen
+            auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich;
+            nach den §§ 8 bis 10 TMG jedoch nicht verpflichtet, die
+            übermittelten oder gespeicherten fremden Informationen zu
+            überwachen. Eine Entfernung oder Sperrung dieser Inhalte erfolgt
+            umgehend ab dem Zeitpunkt der Kenntnis einer konkreten
+            Rechtsverletzung. Eine Haftung ist erst ab dem Zeitpunkt der
+            Kenntniserlangung möglich.
+          </p>
+
+          <h4>2. Externe Links</h4>
+          <p>
+            Die Webseite enthält sog. „externe Links" (Verlinkungen) zu
+            anderen Webseiten, auf deren Inhalt der Anbieter der Webseite
+            keinen Einfluss hat. Aus diesem Grund kann der Anbieter für diese
+            Inhalte auch keine Gewähr übernehmen. Für die Inhalte und
+            Richtigkeit der bereitgestellten Informationen ist der jeweilige
+            Anbieter der verlinkten Webseite verantwortlich. Zum Zeitpunkt
+            der Verlinkung waren keine Rechtsverstöße erkennbar. Bei
+            Bekanntwerden einer solchen Rechtsverletzung wird der Link
+            umgehend entfernt.
+          </p>
+
+          <h4>3. Urheberrecht/Leistungsschutzrecht</h4>
+          <p>
+            Die auf dieser Webseite veröffentlichten Inhalte, Werke und
+            bereitgestellten Informationen unterliegen dem deutschen
+            Urheberrecht und Leistungsschutzrecht. Jede Art der
+            Vervielfältigung, Bearbeitung, Verbreitung, Einspeicherung und
+            jede Art der Verwertung außerhalb der Grenzen des Urheberrechts
+            bedarf der vorherigen schriftlichen Zustimmung des jeweiligen
+            Rechteinhabers. Das unerlaubte Kopieren/Speichern der
+            bereitgestellten Informationen auf diesen Webseiten ist nicht
+            gestattet und strafbar.
+          </p>
+
+          <h4>4. Datenschutz</h4>
+          <p>
+            Durch den Besuch des Internetauftritts können Informationen
+            (Datum, Uhrzeit, aufgerufene Seite) über den Zugriff auf dem
+            Server gespeichert werden. Es werden keine personenbezogenen
+            (z. B. Name, Anschrift oder E-Mail-Adresse) Daten gespeichert,
+            sofern Sie uns diese nicht aktiv mitteilen (z. B. per Kontakt per
+            E-Mail).
+          </p>
+          <p>
+            Sofern personenbezogene Daten erhoben werden, erfolgt dies,
+            sofern möglich, nur mit dem vorherigen Einverständnis des Nutzers
+            der Webseite. Eine Weitergabe der Daten an Dritte findet ohne
+            ausdrückliche Zustimmung des Nutzers nicht statt.
+          </p>
+          <p>
+            Der Anbieter weist darauf hin, dass die Übertragung von Daten im
+            Internet (z. B. per E-Mail) Sicherheitslücken aufweisen und ein
+            lückenloser Schutz der Daten vor dem Zugriff Dritter nicht
+            gewährleistet werden kann. Der Anbieter übernimmt keine Haftung
+            für die durch solche Sicherheitslücken entstandenen Schäden.
+          </p>
+          <p>
+            Der Verwendung der Kontaktdaten durch Dritte zur gewerblichen
+            Nutzung wird ausdrücklich widersprochen. Es sei denn, der
+            Anbieter hat zuvor seine schriftliche Einwilligung erteilt. Der
+            Anbieter behält sich rechtliche Schritte für den Fall der
+            unverlangten Zusendung von Werbeinformationen, z. B. durch
+            Spam-Mails, vor.
+          </p>
+          <p>
+            Ausführliche Informationen zur Verarbeitung personenbezogener
+            Daten auf dieser Website finden Sie in unserer
+            <a href="datenschutzerklärung.html">Datenschutzerklärung</a>.
+          </p>
         </article>
       </div>
     </section>
@@ -255,15 +368,19 @@
             vorhanden)
           </p>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2396.616496491023!2d8.813599876715353!3d53.081162172213595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1280deead11c1%3A0x9bf86da267170104!2sFabLab%20Bremen%20e.%20V.!5e0!3m2!1sen!2sde!4v1782829696807!5m2!1sen!2sde"
-            width="100%"
-            height="450"
-            style="border: 0; border-radius: 8px"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-          ></iframe>
+          <div
+            class="map-consent"
+            data-map-embed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2396.616496491023!2d8.813599876715353!3d53.081162172213595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1280deead11c1%3A0x9bf86da267170104!2sFabLab%20Bremen%20e.%20V.!5e0!3m2!1sen!2sde!4v1782829696807!5m2!1sen!2sde"
+          >
+            <button type="button" class="map-consent-btn">
+              <span class="map-consent-icon">📍</span>
+              Karte laden
+              <span class="map-consent-note"
+                >Beim Laden wird eine Verbindung zu Google-Servern
+                hergestellt.</span
+              >
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -273,11 +390,12 @@
         <p>&copy; All rights reserved | FabLab</p>
 
         <div class="footer-links">
-         <a href="datenschutzerklärung.html">Datenschutzerklärung</a>
+          <a href="datenschutzerklärung.html">Datenschutzerklärung</a>
           <a href="impressum.html">Impressum</a>
         </div>
       </div>
     </footer>
+    <script src="js/components/map-consent.js" type="module" defer></script>
     <script src="js/app.js" type="module" defer></script>
     <script src="js/components/nav.js" type="module" defer></script>
   </body>
