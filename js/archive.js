@@ -7,7 +7,6 @@ import { workshopCard } from "./components/workshopCard.js";
 let activeRequestId = 0;
 
 export async function initGlobalArchiveSystem() {
-  console.log("⚙️ Archive System: Initializing...");
   const selectElement = document.getElementById("archive-select");
   const gridContainer = document.getElementById("archive-grid-container");
 

@@ -66,8 +66,8 @@
 .card .tool-card {
   padding: var(--space-md);
   background: var(--bg-main); /* Adjust for dark mode if needed */
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1px solid var(border-secondary);
   border-radius: var(--radius-md);
 

@@ -141,11 +141,11 @@ body {
   gap: var(--space-sm);
 }
 .section-header h2 {
-  font-size: 2.2rem;
   letter-spacing: -1px;
 }
 .section-header-link {
   text-wrap: nowrap;
+  
 }
 .section-header p {
   color: var(--text-muted);
@@ -231,7 +231,8 @@ h3 {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(var(--space-xs));
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -299,6 +300,6 @@ h3 {
   border-radius: var(--radius-lg);
   font-weight: 600;
 }
-.badge.machine { background: #0285c752; color: #05acff; }
-.badge.project { background: #3d096b52; color: #9010ff; }
+.badge.machine { background: #02517952; color: #05acff; }
+.badge.project { background: #31035a46; color: #8800ff; }
 .badge.workshop { background: #03963752; color: #00ff62; }
