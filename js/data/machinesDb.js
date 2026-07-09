@@ -1,7 +1,10 @@
 import { supabase } from "../supabase.js";
 
 export async function getAllMachines() {
-  let { data: machines, error } = await supabase.from("machines").select("*");
+  let { data: machines, error } = await supabase
+    .from("machines")
+    .select("*")
+    .order("updated_at", { ascending: false });;
 
   if (error) return console.log(error);
 

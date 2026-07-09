@@ -1,7 +1,10 @@
 import { supabase } from "../supabase.js";
 
 export async function getAllProjects() {
-  let { data: projects, error } = await supabase.from("projects").select("*");
+  let { data: projects, error } = await supabase
+    .from("projects")
+    .select("*")
+    .order("event_date", { ascending: false });;
 
   if (error) return console.log(error);
 
