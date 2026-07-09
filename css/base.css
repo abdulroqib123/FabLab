@@ -57,6 +57,8 @@
 }
 
 body.light {
+  font-weight: 500; /*To make texts more readable on light mode */
+
   --bg-dark: #e8e8e8;      /* Soft, clean base background */
   --bg-main: #fafaf9;      /* Off-white for content areas */
   --bg-header: #e8e8e8d9;  /* Clean glass-effect header */

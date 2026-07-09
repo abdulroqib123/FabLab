@@ -1,0 +1,113 @@
+/* --- GUIDE / LEITFADEN PAGE --- */
+
+.guide-toc {
+  padding: var(--space-lg) var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.guide-toc ol {
+  list-style: decimal;
+  padding-left: var(--space-lg);
+}
+
+.guide-toc li {
+  margin-bottom: var(--space-xs);
+}
+
+.guide-toc a {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.guide-toc a:hover {
+  color: var(--accent-primary);
+}
+
+.guide-section {
+  padding: var(--space-lg) var(--space-md);
+  margin-bottom: var(--space-lg);
+  scroll-margin-top: 90px; /* so anchor jumps don't hide under the sticky header */
+}
+
+.guide-section h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.guide-section h4 {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  color: var(--text-main);
+  font-size: 1.05rem;
+}
+
+.guide-steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: var(--space-md) 0;
+}
+
+.guide-steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+.guide-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--accent-tertiary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-note {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-main);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.guide-table-wrapper {
+  overflow-x: auto;
+  margin: var(--space-md) 0;
+}
+
+.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.guide-table th {
+  background: var(--bg-dark);
+  color: var(--text-main);
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 600;
+}
+
+.guide-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-secondary);
+  color: var(--text-muted);
+}
+
+.guide-table tr:last-child td {
+  border-bottom: none;
+}

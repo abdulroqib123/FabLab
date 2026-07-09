@@ -4,11 +4,8 @@
   justify-content: space-between;
 }
 .admin-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: var(--bg-dark);
-  padding: 16px 24px;
+  padding: 16px 0;
   border-bottom: 1px solid #1f2833;
 }
 
@@ -149,6 +146,9 @@
   color: var(--text-muted);
   font-size: 0.95rem;
   margin: 0;
+}
+.subtitle a {
+  text-decoration: underline;
 }
 input,
 textarea {
