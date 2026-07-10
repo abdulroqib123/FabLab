@@ -17,10 +17,15 @@ if(!machineId) return window.location.href = "maschinen.html";
         return;
       }
 
+      //META DESCRIPTION FOR SEO
           const metaDesc = document.createElement("meta");
             metaDesc.name = "description";
             metaDesc.content = createTextPreview(machineData.content || "", 120)
             document.querySelector("head").appendChild(metaDesc);
+
+            //PAGE TITLE FOR SEO AND ACCESSIBILITY
+                document.querySelector("title").textContent =
+                  `${machineData.name} | FabLab`;  
 
     machineName.textContent = machineData.name;
     machineContent.innerHTML = machineData.content;

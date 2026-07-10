@@ -269,7 +269,7 @@ h6 {
 }
 
 /* --- UNIVERSAL GLOBAL MEDIA QUERY --- */
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .menu-toggle {
     display: block;
     color: var(--text-main);
@@ -291,24 +291,13 @@ h6 {
   }
   .nav-menu.active {
     padding: var(--space-lg);
-    height: 450px;
+    height: 550px;
+    max-height: 90%;
     overflow: auto;
     max-height: fit-content;
   }
   .dropdown {
     width: 100%;
-  }
-
-  /* Custom dropdown arrow placement using CSS */
-  .dropdown-trigger::after {
-    content: "▼";
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
   }
 
   .sub-menu {
@@ -319,7 +308,7 @@ h6 {
     border: none;
     margin-top: var(--space-xs);
   }
-  .dropdown:hover .sub-menu {
+ .sub-menu {
     display: block;
   }
 }
