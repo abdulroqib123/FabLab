@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FabLab Bremen - Projekt-Verwaltung</title>
-  
+
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components/buttons.css">
   <link rel="stylesheet" href="../css/components/inputs.css">
   <link rel="stylesheet" href="css/main.css">
-  
-  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+
+  <!-- Quill removed — replaced with the custom block editor below -->
+  <link rel="stylesheet" href="css/block-editor.css">
 </head>
 <body class="dark-theme">
 
@@ -28,7 +29,7 @@
 <h1 id="page-title">Neues Projekt anlegen</h1>
       <p id="audit-badge" class="subtitle">Erstellt von: Wird geladen...</p>
     </header>
-    
+
     <form id="project-form" class="admin-form-card">
       <div class="input-container">
       <div class="form-group">
@@ -46,7 +47,7 @@
           </select>
     </div>
         </div>
-        
+
         <div class="form-group">
           <label for="pj-date">Datum & Uhrzeit</label>
           <input type="datetime-local" id="pj-date" required>
@@ -55,7 +56,7 @@
 
       <div class="form-group image-uploads-group">
   <label>Bilder (Max. 3 URLs)</label>
-  
+
   <div class="img-input-container">
     <input type="url" class="pj-img-input" id="img-url-1" placeholder="Bild-URL 1 (Hauptbild)">
     <label class="quick-upload-btn">
@@ -85,9 +86,9 @@
 
         <div class="form-group HTML-editor-zone">
           <label>Beschreibung / Inhalte</label>
-          <div id="editor-container" style="height: 300px; background: #1f2833; color: #fff;"></div>
+          <div id="block-editor-root"></div>
         </div>
-        
+
         <div class="form-actions">
           <button type="submit" id="submit-btn" class="btn-primary">Project veröffentlichen</button>
         </div>
@@ -95,8 +96,6 @@
     </form>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
-  
   <script type="module" src="js/app.js"></script>
   <script type="module" src="js/projects.js"></script>
 </body>

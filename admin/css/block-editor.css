@@ -1,0 +1,225 @@
+/* --- BLOCK EDITOR --- */
+
+.block-editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.block-editor-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.block-item {
+  background: var(--bg-main);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.block-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-secondary);
+}
+
+.block-item-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.block-item-controls {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.block-icon-btn {
+  background: var(--bg-main);
+  border: 1px solid var(--border-secondary);
+  border-radius: 6px;
+  color: var(--text-main);
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+}
+
+.block-icon-btn:hover {
+  border-color: var(--accent-secondary);
+}
+
+.block-icon-btn.block-delete:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.block-item-body {
+  padding: var(--space-md);
+}
+
+/* Text block */
+/* Text block toolbar */
+.block-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.block-text-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.block-text-format-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary);
+  background: var(--input-bg);
+  color: var(--input-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.block-text-format-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-secondary);
+  background: var(--bg-card);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.block-text-format-btn:hover {
+  border-color: var(--accent-secondary);
+}
+
+.block-text-editable {
+  min-height: 80px;
+  padding: var(--space-sm);
+  border: 1px dashed var(--border-secondary);
+  border-radius: 6px;
+  color: var(--text-main);
+  line-height: 1.6;
+  outline: none;
+}
+
+/* Headings typed inside the editable area should look like headings while editing too */
+.block-text-editable h2 { font-size: 1.6rem; font-weight: 700; margin: var(--space-sm) 0; }
+.block-text-editable h3 { font-size: 1.35rem; font-weight: 700; margin: var(--space-sm) 0; }
+.block-text-editable h4 { font-size: 1.15rem; font-weight: 600; margin: var(--space-xs) 0; }
+.block-text-editable h5 { font-size: 1rem; font-weight: 600; margin: var(--space-xs) 0; }
+.block-text-editable h6 { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: var(--space-xs) 0; }
+
+.block-text-editable ul,
+.block-text-editable ol {
+  padding-left: 1.5rem;
+  margin: var(--space-xs) 0;
+}
+
+.block-text-editable a {
+  color: var(--accent-tertiary);
+  text-decoration: underline;
+}
+
+.block-text-editable:focus {
+  border-color: var(--accent-secondary);
+  border-style: solid;
+}
+
+/* Image slot (used by single image, pair, and carousel slides) */
+.block-image-slot {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px dashed var(--border-secondary);
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-image-slot img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.block-image-slot-empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.block-image-slot-empty:hover {
+  border-color: var(--accent-secondary);
+  color: var(--text-main);
+}
+
+.block-image-replace-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.block-image-slot:hover .block-image-replace-label {
+  opacity: 1;
+}
+
+/* Image pair block */
+.block-image-pair-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+@media (max-width: 600px) {
+  .block-image-pair-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Carousel editor */
+.block-carousel-slides {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.block-carousel-slide-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  border: 1px solid var(--border-secondary);
+  border-radius: 8px;
+}
+
+.block-carousel-slide-editor input[type="text"] {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary);
+  background: var(--input-bg);
+  color: var(--input-color);
+  font-size: 0.9rem;
+}

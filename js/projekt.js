@@ -1,5 +1,6 @@
 import { getProjectById } from "./data/projectsDb.js";
 import { createTextPreview } from "./utils/textPreview.js";
+import { renderContent, getPreviewSource } from "./content-compat.js";
 
 const params = new URLSearchParams(window.location.search);
 const projectId = params.get("pj");
@@ -20,14 +21,19 @@ async function initProject() {
   //META DESCRIPTION FOR SEO
   const metaDesc = document.createElement("meta");
   metaDesc.name = "description";
-  metaDesc.content = createTextPreview(projectData.content || "", 120);
+  metaDesc.content = createTextPreview(
+    getPreviewSource(projectData.content) || "",
+    120,
+  );
   document.querySelector("head").appendChild(metaDesc);
 
   //PAGE TITLE FOR SEO AND ACCESSIBILITY
   document.querySelector("title").textContent = `${projectData.title} | FabLab`;
 
   projectName.textContent = projectData.title;
-  projectContent.innerHTML = projectData.content;
+
+  // Handles both legacy Quill HTML strings and new block-editor JSON automatically
+  projectContent.innerHTML = renderContent(projectData.content);
 
   const imgs = document.querySelectorAll("#projectContent img");
   imgs.forEach((img) => {

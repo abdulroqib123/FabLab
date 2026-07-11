@@ -1,4 +1,5 @@
 import { createTextPreview } from "../utils/textPreview.js";
+import { getPreviewSource } from "../content-compat.js";
 
 export function projectCard(projects) {
   const fragment = document.createDocumentFragment();
@@ -31,7 +32,11 @@ export function projectCard(projects) {
 
     const cardDesc = document.createElement("p");
     cardDesc.classList.add("card-desc");
-    cardDesc.textContent = createTextPreview(pj.content || "", 150);
+    // Handles both legacy Quill HTML strings and new block-editor JSON automatically
+    cardDesc.textContent = createTextPreview(
+      getPreviewSource(pj.content) || "",
+      150,
+    );
     cardBottom.appendChild(cardDesc);
 
     const cardLink = document.createElement("a");

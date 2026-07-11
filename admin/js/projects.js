@@ -1,12 +1,12 @@
 import { supabase } from "../../js/supabase.js";
 import { convertToWebP } from "../../js/utils/fileToWebp.js";
+import { createBlockEditor } from "./block-editor.js";
 
-let quill;
+let blockEditor; // replaces the old `editor` (GrapesJS) / `quill` variable
 let projectId = null;
 let currentAdminName = "";
 let authorId = null;
 
-// Using native ES module top-level logic instead of wrapping in DOMContentLoaded
 initProjectPage();
 
 async function initProjectPage() {
@@ -27,36 +27,18 @@ async function initProjectPage() {
     .eq("id", session.user.id)
     .single();
 
-  // FIX: Added optional chaining to prevent crash if adminProfile is null
   authorId = adminProfile?.id || session.user.id;
   currentAdminName = adminProfile ? adminProfile.full_name : session.user.email;
   document.getElementById("admin-name").textContent = currentAdminName;
 
-  // 3. Initialize Quill Rich Text Engine with Custom Image Interceptor
-  quill = new Quill("#editor-container", {
-    theme: "snow",
-    placeholder: "Legen Sie ein neues Projekt an...", // Typo fix
-    modules: {
-      toolbar: {
-        container: [
-          [{ header: [1, 2, 3, 4, 5, 6, false] }],
-          ["bold", "italic", "underline", "link"],
-          [
-            { list: "ordered" },
-            { list: "bullet" },
-            { list: "check" },
-            { align: [] },
-          ],
-          ["image"],
-          ["code-block"],
-        ],
-        handlers: {
-          // Directs image icon clicks through our storage upload system instead of Base64
-          image: handleQuillImageUpload,
-        },
-      },
+  // 3. Initialize the custom block editor (replaces GrapesJS/Quill init)
+  blockEditor = createBlockEditor(
+    document.getElementById("block-editor-root"),
+    {
+      onUploadImage: uploadFileToSupabase, // same WebP pipeline as before
+      initialBlocks: [],
     },
-  });
+  );
 
   // 4. URL Routing Check
   const urlParams = new URLSearchParams(window.location.search);
@@ -81,25 +63,21 @@ async function initProjectPage() {
 }
 
 /**
- * Shared Core Utility API Function
- * Handles streaming file assets straight up into your public bucket
+ * Shared Core Utility API Function — unchanged from the Quill version.
+ * Handles streaming file assets straight up into your public bucket.
  */
 async function uploadFileToSupabase(file) {
-    // Convert to WebP first
   const webpBlob = await convertToWebP(file);
 
-    // Preserve original filename (without extension)
-    const baseName = file.name.replace(/\.[^/.]+$/, "");
-
-      // Create final WebP filename
+  const baseName = file.name.replace(/\.[^/.]+$/, "");
   const fileName = `${baseName}-${Date.now()}.webp`;
   const filePath = `projects/${fileName}`;
 
-   const { error } = await supabase.storage
-     .from("projects-media")
-     .upload(filePath, webpBlob, {
-       contentType: "image/webp",
-     });
+  const { error } = await supabase.storage
+    .from("projects-media")
+    .upload(filePath, webpBlob, {
+      contentType: "image/webp",
+    });
 
   if (error) throw error;
 
@@ -112,6 +90,7 @@ async function uploadFileToSupabase(file) {
 
 /**
  * Automates Converting Files to Links right inside the project text inputs
+ * — unchanged, these 3 URL fields are separate from the block editor content.
  */
 function setupQuickImageConverters() {
   document.querySelectorAll(".quick-converter").forEach((uploader) => {
@@ -139,33 +118,6 @@ function setupQuickImageConverters() {
   });
 }
 
-/**
- * Intercepts Quill Toolbar Uploads to keep the text blocks light and clean
- */
-async function handleQuillImageUpload() {
-  const input = document.createElement("input");
-  input.setAttribute("type", "file");
-  input.setAttribute("accept", "image/*");
-  input.click();
-
-  input.onchange = async () => {
-    const file = input.files[0];
-    if (!file) return;
-
-    try {
-      const publicUrl = await uploadFileToSupabase(file);
-
-      // Target text insert point index and paste the string URL tag element directly
-      const range = quill.getSelection(true);
-      quill.insertEmbed(range.index, "image", publicUrl);
-      quill.setSelection(range.index + 1);
-    } catch (err) {
-      console.error("Quill media sync error:", err);
-      alert("Editor-Bild Upload fehlgeschlagen.");
-    }
-  };
-}
-
 async function loadExistingWorkshopData(id) {
   const { data: pj, error } = await supabase
     .from("projects")
@@ -180,8 +132,6 @@ async function loadExistingWorkshopData(id) {
   }
 
   document.getElementById("pj-title").value = pj.title || "";
-
-  // FIX: Explicitly cast boolean to matching string value for the select element
   document.getElementById("pj-mintstep").value = String(pj.is_mintsteps);
 
   if (pj.event_date) {
@@ -195,7 +145,9 @@ async function loadExistingWorkshopData(id) {
     });
   }
 
-  quill.clipboard.dangerouslyPasteHTML(pj.content || "");
+  // content is now a JSON array of blocks, not an HTML/CSS blob
+  blockEditor.setBlocks(pj.content || []);
+
   document.getElementById("audit-badge").textContent =
     `Zuletzt aktualisiert von: ${pj.author.full_name}`;
 }
@@ -208,7 +160,6 @@ async function handleFormSubmit(e) {
     .map((input) => input.value.trim())
     .filter((url) => url !== "");
 
-  // FIX: Cast string back to native boolean for Supabase storage
   const isMintstepsBool =
     document.getElementById("pj-mintstep").value === "true";
 
@@ -220,7 +171,7 @@ async function handleFormSubmit(e) {
     ).toISOString(),
     image_urls: imageUrlsArray,
     posted_by: authorId,
-    content: quill.getSemanticHTML(),
+    content: blockEditor.getBlocks(), // JSON array, stored directly in a jsonb column
   };
 
   let responseError;
