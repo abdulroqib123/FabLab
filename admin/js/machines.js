@@ -32,11 +32,11 @@ async function initMachinesPage() {
   currentAdminName = adminProfile ? adminProfile.full_name : session.user.email;
   document.getElementById("admin-name").textContent = currentAdminName;
 
-  // 3. Initialize the custom block editor 
+  // 3. Initialize the custom block editor
   blockEditor = createBlockEditor(
     document.getElementById("block-editor-root"),
     {
-      onUploadImage: uploadFileToSupabase, 
+      onUploadImage: uploadFileToSupabase,
       initialBlocks: [],
     },
   );
@@ -135,7 +135,6 @@ async function loadExistingMachinesData(id) {
   document.getElementById("mc-title").value = mc.name || "";
   document.getElementById("mc-description").value = mc.description || "";
 
-
   if (mc.image_urls && Array.isArray(mc.image_urls)) {
     const imgInputs = document.querySelectorAll(".mc-img-input");
     mc.image_urls.forEach((url, index) => {
@@ -158,15 +157,14 @@ async function handleFormSubmit(e) {
     .map((input) => input.value.trim())
     .filter((url) => url !== "");
 
-
-const machinesPayload = {
-  name: document.getElementById("mc-title").value.trim(),
-  description: document.getElementById("mc-description").value.trim() || "",
-  updated_at: new Date().toISOString(),
-  image_urls: imageUrlsArray,
-  posted_by: authorId,
-  content: JSON.stringify(blockEditor.getBlocks()), // stored as a JSON string in the same text column — no schema change needed
-};
+  const machinesPayload = {
+    name: document.getElementById("mc-title").value.trim(),
+    description: document.getElementById("mc-description").value.trim() || "",
+    updated_at: new Date().toISOString(),
+    image_urls: imageUrlsArray,
+    posted_by: authorId,
+    content: JSON.stringify(blockEditor.getBlocks()), // stored as a JSON string in the same text column — no schema change needed
+  };
 
   let responseError;
 
