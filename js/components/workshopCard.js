@@ -40,7 +40,7 @@ export function workshopCard(workshops) {
 
     const cardLink = document.createElement("a");
     cardLink.classList.add("card-link", "btn-primary");
-    cardLink.href = `/workshop.html?ws=${ws.id}`;
+    cardLink.href = `workshop.html?ws=${ws.id}`;
     cardLink.textContent = "Mehr Erfahren";
     cardBottom.appendChild(cardLink);
 
